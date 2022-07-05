@@ -60,6 +60,7 @@ public class ControlFlowStatementPractice {
         while (day.hasMoreTokens()) {
             String str = day.nextToken() + "요일";
             dayInput.append(str);
+            break;
         }
         return dayInput;
     }
@@ -95,14 +96,14 @@ public class ControlFlowStatementPractice {
             break;
         } return result;
     }
-    public static String repeatString(String str, int num) {
+    public static StringBuilder repeatString(String str, int num) {
         String result = "";
         StringBuilder resultAppend = new StringBuilder(result);
         for (int countNum = 0; countNum < num; countNum++) {
             resultAppend.append(str);
-        } return resultAppend.toString();
+        } return resultAppend;
     }
-    public static String makeDigits2(int num) {
+    public StringBuilder makeDigits2_1(int num) {
         StringBuilder digitAppend = new StringBuilder();
         int numcount = 1;
         while (numcount <= num) {
@@ -113,6 +114,14 @@ public class ControlFlowStatementPractice {
                 digitAppend.append(numcount);
                 numcount++;
             }
+        } return digitAppend;
+    }
+    public static String makeDigits2_2(int num) {
+        StringBuilder digitAppend = new StringBuilder("1");
+        int numcount = 2;
+        while (numcount <= num) {
+            digitAppend.append("-").append(numcount);
+            numcount++;
         } return digitAppend.toString();
     }
     public static int makeMultiplesOfDigit2(int num1, int num2) {
@@ -133,7 +142,7 @@ public class ControlFlowStatementPractice {
             bugCount++;
         } return bugCount;
     }
-    public static int countCharacter2(String str, char letter) {
+    public int countCharacter2(String str, char letter) {
         int bugCount = 0;
         int numCount = 0;
         for (int count = 0; count < str.length(); count++) {
@@ -143,21 +152,47 @@ public class ControlFlowStatementPractice {
             numCount++;
         } return bugCount;
     }
-    public boolean isPrime(int num) {
-        int num3 = 0;
-        for (int num2 = 1;num2 <= num;num2++) {
-            while (num % num2 == 0);
-                num3++;
-                break;
-        }
-        boolean output;
-        if (num3 ==2) {
-            output = true;
-        } else {
-            output = false;
-        } return output;
+    public static StringBuilder listPrimes(int num) {
+        StringBuilder primeList = new StringBuilder("2");
+        for (int count =3; count <= num; count++) {
+            int num2 = 0;
+            for (int count2 = 2;count2 <= Math.sqrt(count); count2++) {
+                if (count % count2 ==0){
+                    num2++;
+                }
+            }
+            if (num2 ==0){
+                primeList.append(-count);
+            }
+        } return primeList;
     }
-    public static void main (String[]args){
+    public String makePermutations(String str) {
+        StringBuilder permutestr = new StringBuilder();
+        for (int num1 = 0; num1< str.length(); num1++) {
+            for (int num2 = 0; num2 < str.length();num2++) {
+                permutestr.append(',').append(str.substring(num1,num1+1));
+                permutestr.append(str.substring(num2,num2+1));
+            }
+        } return permutestr.delete(0,1).toString();
+    }
+    public boolean hasRepeatedCharacter(String str) {
+        boolean reChar = false;
+        for (int count1 = 0; count1<str.length();count1++){
+            for (int count2 = str.length()-1; count2 > count1; count2--){
+                if (str.substring(count1,count1+1).equals(str.substring(count2,count2+1))){
+                    reChar = true;
+                }
+            }
+        } return reChar;
+    }
+    public static String makeMarginalString(String str) {
+        StringBuilder stringMar = new StringBuilder();
+        for (int num1 = 0; num1< str.length();num1++){
+            stringMar.append(str,0,num1+1);
+        } return stringMar.toString();
+    }
+
+    public static void main (String[] args){
             System.out.println("method 입력:");
             String test1 = myInput.nextLine();
             switch (test1) {
@@ -211,7 +246,7 @@ public class ControlFlowStatementPractice {
                 case "makeDigits2":
                     System.out.println("문자열만들 정수형입력");
                     int Digitnum1 = myInput.nextInt();
-                    System.out.println(makeDigits2(Digitnum1));
+                    System.out.println(makeDigits2_2(Digitnum1));
                     break;
                 case "makeMultiplesOfDigit2":
                     System.out.println("입력정수 사이 2의배수");
@@ -226,7 +261,16 @@ public class ControlFlowStatementPractice {
                     char charToFind = myInput.next().charAt(0);
                     System.out.println(countCharacter(stringToFind, charToFind));
                     break;
-
+                case "listPrime":
+                    System.out.print("입력값까지의 소수:");
+                    int listToPrime = myInput.nextInt();
+                    System.out.print(listPrimes(listToPrime));
+                    break;
+                case "makeMarginalString":
+                    System.out.print("부분완성 문자열 리턴");
+                    String StringMar = myInput.nextLine();
+                    System.out.print((makeMarginalString(StringMar)));
+                    break;
                 default:
                     System.out.println("Method Not Found!");
             }
