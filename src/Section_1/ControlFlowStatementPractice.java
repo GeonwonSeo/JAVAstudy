@@ -16,7 +16,7 @@ public class ControlFlowStatementPractice {
         return Integer.toString(Math.abs(num1 - num2));
     }
 
-    public static String fizzBuzz(int num) {
+    public static String FizzBuzz(int num) {
         StringBuilder result = new StringBuilder();
         if (num % 3 == 0) {
             result.append("a");
@@ -36,7 +36,7 @@ public class ControlFlowStatementPractice {
         }
     }
 
-    public static long daysInMonth(int month) {
+    public static long DaysInMonth(int month) {
         int daysToMonth = 0;
         StringBuilder result = new StringBuilder("121010110101");
         switch (result.charAt(month - 1)) {
@@ -55,7 +55,7 @@ public class ControlFlowStatementPractice {
         return daysToMonth;
     }
 
-    public static StringBuilder followAdd(StringTokenizer day) {
+    public static StringBuilder hasAdd(StringTokenizer day) {
         StringBuilder dayInput = new StringBuilder();
         while (day.hasMoreTokens()) {
             String str = day.nextToken() + "요일";
@@ -65,9 +65,9 @@ public class ControlFlowStatementPractice {
         return dayInput;
     }
 
-    public static String followingDay(String day) {
+    public static String FollowingDay(String day) {
         StringTokenizer dayFollow = new StringTokenizer("월 화 수 목 금 토 일");
-        StringBuilder stringToConvert = followAdd(dayFollow);
+        StringBuilder stringToConvert = hasAdd(dayFollow);
         String result = "올바른 요일이 아닙니다";
         while (day.contains(stringToConvert) && day.length() == 3) {
             int dayIndex = stringToConvert.indexOf(day);
@@ -194,8 +194,8 @@ public class ControlFlowStatementPractice {
 
     public static void main (String[] args){
             System.out.println("method 입력:");
-            String test1 = myInput.nextLine();
-            switch (test1) {
+            String test = myInput.nextLine();
+            switch (test) {
                 case "Dist":
                     System.out.println("speed, time입력:");
                     int speed1 = myInput.nextInt();
@@ -208,22 +208,22 @@ public class ControlFlowStatementPractice {
                     int num2 = myInput.nextInt();
                     System.out.println(computeDifference(num1, num2));
                     break;
-                case "fizzBuzz":
+                case "FizzBuzz":
                     System.out.println("3과 5의 fizzBuzz 계산");
                     int num3 = myInput.nextInt();
-                    System.out.println(fizzBuzz(num3));
+                    System.out.println(FizzBuzz(num3));
                     break;
-                case "daysInMonth":
+                case "DaysInMonth":
                     System.out.println("Month 입력");
                     int num4 = myInput.nextInt();
-                    System.out.println(daysInMonth(num4));
+                    System.out.println(DaysInMonth(num4));
                     break;
-                case "followingDay":
+                case "FollowingDay":
                     System.out.println("요일 입력");
                     String data1 = myInput.nextLine();
-                    //System.out.println(followingDay(data1));
+                    //System.out.println(FollowingDay(data1));
                     StringTokenizer dayFollow = new StringTokenizer("월 화 수 목 금 토 일");
-                    System.out.println(followAdd(dayFollow));
+                    System.out.println(hasAdd(dayFollow));
                     break;
                 case "isPythagorean":
                     System.out.println("삼각형 세변 입력");
