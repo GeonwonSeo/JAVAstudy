@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class+iframe+script</title>
+    <style>
+    .intro {background:pink;}
+    .special{color:red;}
+    #myheader {color:red;}
+    #special {color:blue;}
+    </style>
+</head>
+<body>
+
+<p class="intro special">My paragraph</p>
+<p id="special">My paragraph</p>
+<a href="HTML2.html" target = "_self">
+    <h1 id="myheader">My Home Page</h1></a>
+
+
+<iframe src="https://www.google.com" width="1000" height="500" style="border:none"></iframe>
+
+<p id="demo">Hi.</p>
+
+<script>
+document.getElementById("demo").innerHTML = "Hello World!";
+document.getElementById("demo").style.fontSize="40px";
+document.getElementById("demo").style.color="blue";
+</script>
+</body>
+</html>

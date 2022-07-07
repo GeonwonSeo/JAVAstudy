@@ -6,4 +6,7 @@
 reference: 참조, 포인터 자체- dereference: 포인터가 가리키는 값 (Value)
 int 는 값 자체이기 때문에 포인터라는 개념이 없어서포인터 연산 할 수 없다
 Integer.toString(int)로 해결 https://stackoverflow.com/questions/55100699/int-cannot-be-dereferenced-java
-
+#next(), nextLine()의 차이
+next()는 개행문자(Enter)를 무시하고 입력을 받고 nextLine은 한줄 단위로 입력을 받기 때문에 개행문자(Enter)도 포함한다.
+velog.io/@alswp2274/JAVA-next-nextLine의-차이 <-아닌건가? next써도 남아있음
+https://medium.com/@kimddub/java-scanner-%EB%B2%84%ED%8D%BC-%EB%B9%84%EC%9A%B0%EA%B8%B0-913c652cc144
