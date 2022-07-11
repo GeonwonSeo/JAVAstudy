@@ -25,11 +25,11 @@ class Constructors {
 }
 
 class CarExample {
-    public String model;
-    public String color;
-    public CarExample(){} // 기본생성자. 생성자가 없는 경우 자동 생성
+    String model;
+    String color;
+    CarExample(){} // 기본생성자. 생성자가 없는 경우 자동 생성
     // 생성자 오버로딩
-    public CarExample(String model, String color) { // 매개변수가 있는 생성자
+    CarExample(String model, String color) { // 매개변수가 있는 생성자
         this.model = model;
         this.color = color;
     }
@@ -48,17 +48,17 @@ class CarEx2 {
     private String color;
     private int maxSpeed;
 
-    public CarEx2(String modelName, String color, int maxSpeed) {
+    CarEx2(String modelName, String color, int maxSpeed) {
         this.modelName = modelName;
         this.color = color;
         this.maxSpeed = maxSpeed;
     }
 
-    public String getModelName() {
+    String getModelName() {
         return modelName;
     }
 
-    public String getColor() {
+    String getColor() {
         return color;
     }
 }
@@ -69,10 +69,10 @@ class Test {
     }
 }
 class Example  {
-    public Example() {
+    Example() {
         System.out.println("Example의 기본 생성자 호출!");
     }
-    public Example(int x) {
+    Example(int x) {
         this();
         System.out.println("Example의 두 번째 생성자 호출!");
     }
@@ -83,12 +83,12 @@ class Outer1 { //외부 클래스
 
     private InClass inClass; // 내부 클래스 자료형 변수 선언
 
-    public Outer1() {
+    Outer1() {
         inClass = new InClass(); //외부 클래스 생성자
     }
     class InClass { //인스턴스 내부 클래스
         int inNum = 10; //내부 클래스의 인스턴스 변수
-        public void Test() {
+        void Test() {
             System.out.println("Outer num = " + num + "(외부 클래스의 인스턴스 변수)");
             System.out.println("Outer sNum = " + sNum + "(외부 클래스의 정적 변수)");
         }
@@ -96,7 +96,7 @@ class Outer1 { //외부 클래스
     static void getPrintStatic() {
         System.out.println("스태틱 메서드");
     }
-    public void testClass() {
+    void testClass() {
         inClass.Test();
     }
 }

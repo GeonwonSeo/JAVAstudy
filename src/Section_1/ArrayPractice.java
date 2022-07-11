@@ -5,34 +5,34 @@ import java.awt.geom.NoninvertibleTransformException;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class ArrayPractice {
+class ArrayPractice {
     static Scanner myInput = new Scanner(System.in);
-    public static int getLastElement(int[] arr) {
+    static int getLastElement(int[] arr) {
         int arr1 = -1;
         if (arr.length != 0) {
             arr1 = arr[arr.length-1];
         } return arr1;
     }
-    public static String[] getAllWords(String str) {
+    static String[] getAllWords(String str) {
         int strNum = str.split(" ").length;
         String[] str1 = new String[strNum];
         if (strNum != 0){
             str1 = str.split(" ");
         } return str1;
     }
-    public char[] getAllLetters(String str) {
+    char[] getAllLetters(String str) {
         char[] letterGet = new char[str.length()];
         for (int i = 0;i< str.length(); i++) {
             letterGet[i] = str.charAt(i);
         } return letterGet;
     }
-    public int getLargestElement(int[] arr) {
+    int getLargestElement(int[] arr) {
         int eleGet = arr[0];
         for (int i =0; i< arr.length; i++) {
             eleGet = Math.max(eleGet,arr[i]);
         } return eleGet;
     }
-    public static String getLongestWord(String str) {
+    static String getLongestWord(String str) {
         String result = "";
         String[] wordGet = str.split(" ");
         for (int i=0; i < wordGet.length;i++) {
@@ -41,7 +41,7 @@ public class ArrayPractice {
             } return result;
         }
 
-    public int[] getEvenNumbers(int[] arr) {
+    int[] getEvenNumbers(int[] arr) {
         int[] evenNums =new int[] {};
 
         for (int i = 0; i<arr.length; i++){
@@ -53,39 +53,39 @@ public class ArrayPractice {
             }
         } return evenNums;
     }
-    public int[] addToFront(int[] arr, int el) {
+    int[] addToFront(int[] arr, int el) {
         int[] result = new int[arr.length +1];
         result[0] = el;
         System.arraycopy(arr, 0,result,1,arr.length);//시스템 값을 직접 바꿨으므로 변수 설정할 필요가 없다.
         return result;
     }
-    public int[] addToBack(int[] arr, int el) {
+    int[] addToBack(int[] arr, int el) {
         int[] result = new int[arr.length +1];
         System.arraycopy(arr, 0,result,0,arr.length);
         result[result.length-1] = el;
         return result;
         //반복문도 사용해보기
     }
-    public int[] mergeArrays(int[] arr1, int[] arr2) {
+    int[] mergeArrays(int[] arr1, int[] arr2) {
         int[] result = new int[arr1.length + arr2.length];
         System.arraycopy(arr1, 0, result, 0, arr1.length);
         System.arraycopy(arr2,0,result, arr1.length, arr2.length);
         return result;
     }
-    public int[] getElementsAfter(int[] arr, int n) {
+    int[] getElementsAfter(int[] arr, int n) {
         int[] result = new int[arr.length - n];
         if (arr.length == 0 || arr.length <= n) return new int[] {};
         System.arraycopy(arr, n, result, 0, arr.length -n);
         return result;
     }
-    public int[] getElementsUpTo(int[] arr, int n) {
+    int[] getElementsUpTo(int[] arr, int n) {
         int[] result = new int[n];
         if (arr.length ==0 || arr.length <=n) return new int[] {};
 
         System.arraycopy(arr, 0,result, 0, n);
         return result;
     }
-    public static int[] getAllElementsButNth(int[] arr, int n) {
+    static int[] getAllElementsButNth(int[] arr, int n) {
 
         int index = 0;
         int[] result = (arr.length == 0) ? new int[0] : arr.length <= n ? arr: new int[arr.length-1];
@@ -94,7 +94,7 @@ public class ArrayPractice {
 
         } return result;
     }
-    public static String createPhoneNumber(int[] arr) {
+    static String createPhoneNumber(int[] arr) {
         String result = "";
         final int LENGTH = arr.length;
         String head = "010";
@@ -112,7 +112,7 @@ public class ArrayPractice {
         result = String.format("(%s)%s-%s", head, body, tail);
         return result;
     }
-    public static int[] fibonacci(int num) {
+    static int[] fibonacci(int num) {
         int[] num3 = new int[num+1];
         num3[0] = 0;
         if (num >0) num3[1] = 1;

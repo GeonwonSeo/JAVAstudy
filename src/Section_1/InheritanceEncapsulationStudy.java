@@ -1,5 +1,8 @@
 package Section_1;
-
+///상속
+//
+///캡슐화
+//접근제어자 - 외부로부터 데이터 보호/ 내부적으로만 사용되는 부분 숨기기 위함
 class InheritanceEncapsulationStudy {
     public static void main(String[] args) {
         Bike bike = new Bike(); // 각각의 타입으로 선언 + 각각의 타입으로 객체 생성
@@ -48,7 +51,7 @@ class Employee {
     String name;
     Address address;
 
-    public Employee(int id, String name, Address address) { //포함관계
+    Employee(int id, String name, Address address) { //포함관계
         this.id = id;
         this.name = name;
         this.address = address;
@@ -73,7 +76,7 @@ class Employee {
 class Address {
     String city, country;
 
-    public Address(String city, String country) {
+    Address(String city, String country) {
         this.city = city;
         this.country = country;
     }

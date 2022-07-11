@@ -1,8 +1,8 @@
 package Section_1;
-
+///다형성 하나의 객체가 여러가지 형태를 가질수 있는 것
+//instanceof 참조변수의 타입 변환, 즉 캐스팅이 가능한 지 여부를 boolean 타입으로 확인
 class PolymorphismAbstractionStudy {
-    ///다형성 하나의 객체가 여러가지 형태를 가질수 있는 것
-    //instanceof 참조변수의 타입 변환, 즉 캐스팅이 가능한 지 여부를 boolean 타입으로 확인
+
     public static void main(String[] args) {
         Animals animal = new Animals();
         System.out.println(animal instanceof Object); //true

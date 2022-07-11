@@ -1,7 +1,7 @@
 package Section_1;
 import java.util.Arrays;
 import java.util.Random;
-public class ArrayStudy {
+class ArrayStudy {
     public static void main(String[] args) {
         int[] odd = {1,3,5,7,9,11};
         System.out.printf("%d\n", odd[0]);

@@ -1,7 +1,7 @@
 package Section_1;
 import java.util.StringTokenizer;
 
-public class StringStudy {
+class StringStudy {
     ///String 변수선언,할당
     public static void main(String[] args) {
         String name1= "Seo Coding";

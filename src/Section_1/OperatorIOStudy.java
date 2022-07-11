@@ -1,7 +1,7 @@
 package Section_1;
 import java.util.Scanner;                 // Scanner 클래스를 가져옵니다.
 
-public class OperatorIOStudy {
+class OperatorIOStudy {
     public static void main(String[] args) {
         ///산술연산자
         int num1 = 1;

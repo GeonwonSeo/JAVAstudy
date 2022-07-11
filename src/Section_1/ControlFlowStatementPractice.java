@@ -3,20 +3,20 @@ import java.util.Scanner;
 import java.util.StringTokenizer;
 
 
-public class ControlFlowStatementPractice {
+class ControlFlowStatementPractice {
     static Scanner myInput = new Scanner(System.in);
 
-    public static int getRunCatDistance(int speed, int time) {
+    static int getRunCatDistance(int speed, int time) {
         int distance;
         distance = speed * time;
         return distance;
     }
 
-    public static String computeDifference(int num1, int num2) {
+    static String computeDifference(int num1, int num2) {
         return Integer.toString(Math.abs(num1 - num2));
     }
 
-    public static String FizzBuzz(int num) {
+    static String FizzBuzz(int num) {
         StringBuilder result = new StringBuilder();
         if (num % 3 == 0) {
             result.append("a");
@@ -36,7 +36,7 @@ public class ControlFlowStatementPractice {
         }
     }
 
-    public static long DaysInMonth(int month) {
+    static long DaysInMonth(int month) {
         int daysToMonth = 0;
         StringBuilder result = new StringBuilder("121010110101");
         switch (result.charAt(month - 1)) {
@@ -55,7 +55,7 @@ public class ControlFlowStatementPractice {
         return daysToMonth;
     }
 
-    public static StringBuilder hasAdd(StringTokenizer day) {
+    static StringBuilder hasAdd(StringTokenizer day) {
         StringBuilder dayInput = new StringBuilder();
         while (day.hasMoreTokens()) {
             String str = day.nextToken() + "요일";
@@ -65,7 +65,7 @@ public class ControlFlowStatementPractice {
         return dayInput;
     }
 
-    public static String FollowingDay(String day) {
+    static String FollowingDay(String day) {
         StringTokenizer dayFollow = new StringTokenizer("월 화 수 목 금 토 일");
         StringBuilder stringToConvert = hasAdd(dayFollow);
         String result = "올바른 요일이 아닙니다";
@@ -75,7 +75,7 @@ public class ControlFlowStatementPractice {
         }
         return result;
     }
-    public static boolean isPythagorean(int num1, int num2, int num3) {
+    static boolean isPythagorean(int num1, int num2, int num3) {
         boolean result;
         int maxLeg = Math.max(Math.max(num1, num2), Math.max(num1, num3));
         int minLeg = Math.min(Math.min(num1, num2), Math.min(num1, num3));
@@ -89,21 +89,21 @@ public class ControlFlowStatementPractice {
             result = false;
         } return result;
     }
-    public static boolean isOdd(int num){
+    static boolean isOdd(int num){
         boolean result = false;
         while ((num & 1)==1) {
             result = true;
             break;
         } return result;
     }
-    public static StringBuilder repeatString(String str, int num) {
+    static StringBuilder repeatString(String str, int num) {
         String result = "";
         StringBuilder resultAppend = new StringBuilder(result);
         for (int countNum = 0; countNum < num; countNum++) {
             resultAppend.append(str);
         } return resultAppend;
     }
-    public StringBuilder makeDigits2_1(int num) {
+    StringBuilder makeDigits2_1(int num) {
         StringBuilder digitAppend = new StringBuilder();
         int numcount = 1;
         while (numcount <= num) {
@@ -116,7 +116,7 @@ public class ControlFlowStatementPractice {
             }
         } return digitAppend;
     }
-    public static String makeDigits2_2(int num) {
+    static String makeDigits2_2(int num) {
         StringBuilder digitAppend = new StringBuilder("1");
         int numcount = 2;
         while (numcount <= num) {
@@ -124,7 +124,7 @@ public class ControlFlowStatementPractice {
             numcount++;
         } return digitAppend.toString();
     }
-    public static int makeMultiplesOfDigit2(int num1, int num2) {
+    static int makeMultiplesOfDigit2(int num1, int num2) {
         int numcount = 0;
         for (int numvalue = Math.min(num1,num2); numvalue <= Math.max(num1,num2);numvalue++) {
             int numDet = numvalue;
@@ -134,7 +134,7 @@ public class ControlFlowStatementPractice {
             }
         } return numcount;
     }
-    public static int countCharacter(String word, char word2) {
+    static int countCharacter(String word, char word2) {
         StringTokenizer wordToDiv = new StringTokenizer(word,Character.toString(word2),false);
         int bugCount = 0;
         int tokenCount = wordToDiv.countTokens();
@@ -142,7 +142,7 @@ public class ControlFlowStatementPractice {
             bugCount++;
         } return bugCount;
     }
-    public int countCharacter2(String str, char letter) {
+    int countCharacter2(String str, char letter) {
         int bugCount = 0;
         int numCount = 0;
         for (int count = 0; count < str.length(); count++) {
@@ -152,7 +152,7 @@ public class ControlFlowStatementPractice {
             numCount++;
         } return bugCount;
     }
-    public static StringBuilder listPrimes(int num) {
+    static StringBuilder listPrimes(int num) {
         StringBuilder primeList = new StringBuilder("2");
         for (int count =3; count <= num; count++) {
             int num2 = 0;
@@ -166,7 +166,7 @@ public class ControlFlowStatementPractice {
             }
         } return primeList;
     }
-    public String makePermutations(String str) {
+    String makePermutations(String str) {
         StringBuilder permutestr = new StringBuilder();
         for (int num1 = 0; num1< str.length(); num1++) {
             for (int num2 = 0; num2 < str.length();num2++) {
@@ -175,7 +175,7 @@ public class ControlFlowStatementPractice {
             }
         } return permutestr.delete(0,1).toString();
     }
-    public boolean hasRepeatedCharacter(String str) {
+    boolean hasRepeatedCharacter(String str) {
         boolean reChar = false;
         for (int count1 = 0; count1<str.length();count1++){
             for (int count2 = str.length()-1; count2 > count1; count2--){
@@ -185,7 +185,7 @@ public class ControlFlowStatementPractice {
             }
         } return reChar;
     }
-    public static String makeMarginalString(String str) {
+    static String makeMarginalString(String str) {
         StringBuilder stringMar = new StringBuilder();
         for (int num1 = 0; num1< str.length();num1++){
             stringMar.append(str,0,num1+1);
