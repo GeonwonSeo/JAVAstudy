@@ -132,3 +132,4 @@ interface Calculatable2 {
     int sum();
     int avg();
 }
+

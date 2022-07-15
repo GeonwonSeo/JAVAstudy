@@ -3,6 +3,8 @@ package Section_1;
 //
 ///캡슐화
 //접근제어자 - 외부로부터 데이터 보호/ 내부적으로만 사용되는 부분 숨기기 위함
+//업캐스팅 - 부모클래스의 참조변수는 자식 객체를 참조할수 있다는 점을 이용 ex)Vehicle abc = new Bike();
+//다운캐스팅 - 업캐스팅된 대상을 다시 해당 타입으로 참조시키는 것 ex) Bike 고유한method = (Bike)abc;
 class InheritanceEncapsulationStudy {
     public static void main(String[] args) {
         Bike bike = new Bike(); // 각각의 타입으로 선언 + 각각의 타입으로 객체 생성

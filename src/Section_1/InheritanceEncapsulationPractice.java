@@ -73,7 +73,7 @@ class staticMethod {
 }
 
 
-class Calculator{
+class Calculator1{
     int left, right;
 
     void setOprands(int left, int right){
@@ -93,19 +93,19 @@ class CalculatorDemo4 {
 
     public static void main(String[] args) {
 
-        Calculator c1 = new Calculator();
+        Calculator1 c1 = new Calculator1();
         c1.setOprands(10, 20);
         c1.sum();
         c1.avg();
         //c1.substract();//새로 함수 추가했다면 새로 상속 class 작성
 
-        Calculator c2 = new Calculator();
+        Calculator1 c2 = new Calculator1();
         c2.setOprands(20, 40);
         c2.sum();
         c2.avg();
     }
 }
-class typePlus extends Calculator {
+class typePlus extends Calculator1 {
     void substract () {
         System.out.println(this.left - this.right);
     }
@@ -131,5 +131,12 @@ class CalculatorDemo2 {
         c3.avg();
         c3.substract();
         c3.multiplication();
+        System.out.println(c3);
+        System.out.println(c3.toString());
     }
+}
+
+class objectStudy1 {//뒤에 extends Object가 생략된것
+}
+class objectStudy2 extends Object {
 }
