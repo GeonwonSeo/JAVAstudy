@@ -1,5 +1,4 @@
 package Section_1;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,19 +42,17 @@ class ArrayListExample {
     public static void main(String[] args) {
         // ArrayList를 생성하여 list에 할당
         List<String> list = new ArrayList<String>();
-
         list.add("Java");
         list.add("is");
         list.add("coming");
 
         int size = list.size();
-
         String num1 = list.get(0);
-
         for (int i = 0; i < list.size(); i++) {
             String str = list.get(i);
         }
         list.remove(0);
         System.out.println(list);
+        }
     }
-}
+
