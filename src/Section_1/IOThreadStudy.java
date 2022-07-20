@@ -1,5 +1,9 @@
 package Section_1;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.util.Arrays;
 
 ///스레드
@@ -87,4 +91,42 @@ class ThreadExample2 {
         thread2.start();
     }
 }
-///
+///파일입출력
+//FileInputStream + FileOutputStream - 바이트(1byte)기반스트림, char은 2byte인 문제 - bufferedinput/outputstream 혹은
+//문자기반 FileReader / FileWriter 사용
+class IOInputExample1 {
+    public static void main(String args[])
+    {
+        try {
+            FileInputStream fileInput = new FileInputStream("C:\\Users\\Seo Geon Won\\IdeaProjects" +
+                    "\\JAVAstudy\\src\\Section_1\\IOExample.txt");
+            BufferedInputStream bufferedInput = new BufferedInputStream(fileInput);
+            int i = 0;
+            while ((i = bufferedInput.read()) != -1) { //fileInput.read()의 리턴값을 i에 저장한 후, 값이 -1인지 확인합니다.
+                System.out.print((char)i);
+            }
+            fileInput.close();
+        }
+        catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}
+class IOOutputExample2{
+    public static void main(String[] args) {
+        try {
+            FileOutputStream fileOutput = new FileOutputStream("./src/Section_1/IOExample.txt");
+            BufferedOutputStream bufferedOutput= new BufferedOutputStream(fileOutput);
+            String word = "code";
+
+            byte b[] = word.getBytes();
+            bufferedOutput.write(b);
+            bufferedOutput.close();
+        }
+        catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}
+//FileReader/FileWriter
+
