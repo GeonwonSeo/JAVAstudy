@@ -33,7 +33,7 @@ class StackQueuePractice {
   }
 
 class QueuePractice {
-  public int paveBox(Integer[] boxes) {
+  int paveBox(Integer[] boxes) {
     // TODO:
     int length = 0, max = boxes[0], count = 0;
 
@@ -48,12 +48,79 @@ class QueuePractice {
     }
     return length;
   }
-}
-class QueuePractice2 {
-  public int queuePrinter(int bufferSize, int capacities, int[] documents) {
-    // TODO:
-    
+  int paveBox2(Integer[] boxes) {
+    ArrayList<Integer> answer =new ArrayList<>();
+    //배열 -> 리스트
+    List<Integer> arrayList = new ArrayList<Integer>(Arrays.asList(boxes));
+    while(arrayList.size() >0) {
+      for (int i = 0; i < arrayList.size(); i++) { //answer이 arraylist.size보다 클경우 더 돌릴 필요없긴함.
+        if (arrayList.get(0)<arrayList.get(i)) {
+          answer.add(i);
+          arrayList = arrayList.subList(i, arrayList.size());
+          break;
+        }
+        if (i == arrayList.size()-1) {
+          answer.add(arrayList.size());
+          arrayList.clear();
+        }
+      }
+    }
+    int result = 0;
+    for (int i = 0; i < answer.size(); i++) {
+      if (result < answer.get(i)) result = answer.get(i);
+    } return result;
   }
 }
+
+class QueuePractice3 {
+  int queuePrinter(int bufferSize, int capacities, int[] documents) {
+    // TODO:
+    int count = 0;
+    Queue<Integer> queue = new LinkedList<>();
+    for (int i = 0; i < bufferSize; i++) {
+      queue.add(0);
+    }
+    queue.poll();
+    queue.add(documents[0]);
+    documents = Arrays.copyOfRange(documents, 1, documents.length);
+    count++;
+
+    while (documents.length != 0 || (queue.stream().reduce(0, Integer::sum) != 0)) {
+      if (documents.length != 0) {
+        int sum = queue.stream().reduce(0, Integer::sum) + documents[0];
+        if (sum > capacities) {
+          queue.poll();
+          sum = queue.stream().reduce(0, Integer::sum) + documents[0];
+
+            if (sum <= capacities) {
+              queue.add(documents[0]);
+              documents = Arrays.copyOfRange(documents, 1, documents.length);
+              count++;
+            } else {
+              queue.add(0);
+              count++;
+            }
+          } else {
+            queue.poll();
+            queue.add(documents[0]);
+            documents = Arrays.copyOfRange(documents, 1, documents.length);
+            count++;
+          }
+        } else {
+            queue.poll();
+            queue.add(0);
+            count++;
+        }
+      } return count;
+    }
+  int queuePrinter4(int bufferSize, int capacities, int[] documents) {
+    Queue<Integer> queue = new LinkedList<>();
+    int count = 0;
+    return count;
+  }
+}
+
+
+
 
 
